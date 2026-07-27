@@ -1,0 +1,157 @@
+{% extends "dashboard_base.html" %}
+
+{% block title %}
+Analysis
+{% endblock %}
+
+{% block content %}
+
+<div class="max-w-7xl mx-auto space-y-8">
+
+    <div>
+
+        <h1 class="text-4xl font-bold text-gray-800">
+            🧠 AI Mental Health Analysis
+        </h1>
+
+        <p class="text-gray-500 mt-2">
+            Emotion and symptom detection from your latest journal.
+        </p>
+
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- Emotion Card -->
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <div class="flex items-center justify-between">
+
+                <h2 class="text-2xl font-bold">
+                    Detected Emotion
+                </h2>
+
+                <span class="bg-teal-100 text-teal-700 px-4 py-2 rounded-full">
+                    AI Prediction
+                </span>
+
+            </div>
+
+            <h3 class="text-5xl font-bold text-teal-600 mt-8">
+                {{ emotion }}
+            </h3>
+
+            <div class="mt-8">
+
+                <div class="flex justify-between mb-2">
+
+                    <span class="text-gray-600">
+                        Confidence
+                    </span>
+
+                    <span class="font-semibold">
+                        {{ confidence }}%
+                    </span>
+
+                </div>
+
+                <div class="w-full bg-gray-200 rounded-full h-3">
+
+                    <div
+                        class="bg-teal-500 h-3 rounded-full transition-all duration-700"
+                        style="width: {{ confidence }}%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Symptoms -->
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h2 class="text-2xl font-bold mb-8">
+                Extracted Symptoms
+            </h2>
+
+            {% if symptoms %}
+
+            <div class="flex flex-wrap gap-3">
+
+                {% for symptom in symptoms %}
+
+                <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full font-semibold">
+
+                    {{ symptom }}
+
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <p class="text-gray-500">
+
+                No symptoms detected.
+
+            </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- AI Summary -->
+
+    <div class="bg-gradient-to-r from-teal-600 to-emerald-500 rounded-3xl shadow-xl p-8 text-white">
+
+        <h2 class="text-3xl font-bold">
+
+            🤖 AI Summary
+
+        </h2>
+
+        <p class="mt-6 leading-8 text-lg">
+
+            Based on your latest journal entry, the AI detected
+            <strong>{{ emotion }}</strong>
+            with a confidence score of
+            <strong>{{ confidence }}%</strong>.
+
+            {% if symptoms %}
+
+            The system also identified the following physical symptoms:
+
+            {{ symptoms|join:", " }}.
+
+            {% else %}
+
+            No physical symptoms were detected.
+
+            {% endif %}
+
+        </p>
+
+    </div>
+    
+
+</div>
+
+<div class="mt-8 flex justify-end">
+
+    <a href="{% url 'recommendation' %}"
+       class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-teal-600 text-white font-medium shadow hover:bg-teal-700 transition">
+
+        View Recommended Yoga Pose →
+
+    </a>
+
+</div>
+
+{% endblock %}

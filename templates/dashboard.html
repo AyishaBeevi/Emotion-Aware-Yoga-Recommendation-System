@@ -1,0 +1,33 @@
+{% extends "dashboard_base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/dashboard/hero.html" %}
+
+{% include "includes/dashboard/stats.html" %}
+
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-8">
+
+<div class="xl:col-span-2">
+
+{% include "includes/dashboard/journal.html" %}
+
+</div>
+
+
+
+</div>
+
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8">
+
+{% include "includes/dashboard/wellness.html" %}
+
+{% include "includes/dashboard/activity.html" %}
+
+</div>
+
+{% endblock %}

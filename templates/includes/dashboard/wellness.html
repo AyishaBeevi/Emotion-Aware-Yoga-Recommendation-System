@@ -1,0 +1,164 @@
+<div class="bg-white rounded-3xl shadow-md p-8">
+
+    <!-- Header -->
+
+    <div class="flex items-center justify-between">
+
+        <div>
+
+            <h2 class="text-2xl font-bold text-gray-900">
+
+                Journal Insight
+
+            </h2>
+
+            <p class="text-gray-500 mt-1">
+
+                AI summary of your latest entry.
+
+            </p>
+
+        </div>
+
+        <span class="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium">
+
+            ✨ AI Generated
+
+        </span>
+
+    </div>
+
+    {% if latest %}
+
+    <div class="mt-8 space-y-8">
+
+        <!-- Journal Preview -->
+
+        <div>
+
+            <p class="text-sm uppercase tracking-wide text-gray-500 mb-3">
+
+                Latest Journal
+
+            </p>
+
+            <div class="bg-gray-50 rounded-2xl p-5">
+
+                <p class="text-gray-700 leading-8 italic">
+
+                    "{{ latest.text|truncatechars:180 }}"
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Insights -->
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-slate-50 rounded-2xl p-5">
+
+                <p class="text-sm text-gray-500">
+
+                    Detected Emotion
+
+                </p>
+
+                <h3 class="text-2xl font-bold text-teal-600 mt-2">
+
+                    {{ emoji }} {{ emotion }}
+
+                </h3>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-5">
+
+                <p class="text-sm text-gray-500">
+
+                    AI Confidence
+
+                </p>
+
+                <h3 class="text-2xl font-bold mt-2">
+
+                    {{ confidence|floatformat:1 }}%
+
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- Symptoms -->
+
+        <div>
+
+            <p class="text-sm uppercase tracking-wide text-gray-500 mb-4">
+
+                Physical Symptoms
+
+            </p>
+
+            {% if symptoms %}
+
+            <div class="flex flex-wrap gap-3">
+
+                {% for symptom in symptoms %}
+
+                <span class="bg-orange-50 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">
+
+                    {{ symptom }}
+
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="bg-gray-50 rounded-2xl p-5">
+
+                <p class="text-gray-500">
+
+                    No physical symptoms detected.
+
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="text-center py-16">
+
+        <div class="text-6xl">
+
+            🤖
+
+        </div>
+
+        <h3 class="text-2xl font-bold mt-6">
+
+            No Analysis Yet
+
+        </h3>
+
+        <p class="text-gray-500 mt-3">
+
+            Write your first journal to receive AI-powered insights.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>

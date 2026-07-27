@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        {% block title %}
+        Dashboard
+        {% endblock %}
+
+    </title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/output.css' %}">
+
+</head>
+
+<body class="bg-gray-100">
+
+    {% include "includes/sidebar.html" %}
+
+    <div class="ml-64 min-h-screen flex flex-col">
+
+        {% include "includes/topbar.html" %}
+
+        <main class="flex-1 p-8">
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+        {% include "includes/footer.html" %}
+
+    </div>
+
+</body>
+
+</html>

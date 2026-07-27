@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<section class="bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-24">
+
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <h1 class="text-5xl font-bold">
+            About Emotion-Aware Yoga AI
+        </h1>
+
+        <p class="mt-8 text-xl max-w-3xl mx-auto text-teal-100">
+            Emotion-Aware Yoga AI is an intelligent wellness platform that
+            analyzes your journal entries using Artificial Intelligence and
+            Natural Language Processing to understand your emotional well-being
+            and recommend personalized yoga practices with clear explanations.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-14 items-center">
+
+            <div>
+
+                <h2 class="text-4xl font-bold mb-6">
+                    Our Mission
+                </h2>
+
+                <p class="text-gray-600 leading-8">
+
+                    Mental health is unique for every individual.
+                    Traditional yoga applications often provide generic
+                    recommendations without considering emotions or physical
+                    symptoms.
+
+                    Our mission is to bridge the gap between Artificial
+                    Intelligence and holistic wellness by providing
+                    personalized, explainable, and safe yoga recommendations
+                    tailored to each user's emotional condition.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700"
+                    class="rounded-3xl shadow-xl"
+                    alt="Yoga Meditation">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="py-20 bg-gray-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center">
+            How It Works
+        </h2>
+
+        <div class="grid md:grid-cols-4 gap-8 mt-16">
+
+            <div class="bg-white rounded-2xl shadow-md p-8 text-center">
+
+                <div class="text-5xl mb-5">
+                    ✍️
+                </div>
+
+                <h3 class="font-semibold text-xl">
+                    Write Journal
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Share your thoughts, feelings, or daily experiences.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 text-center">
+
+                <div class="text-5xl mb-5">
+                    🧠
+                </div>
+
+                <h3 class="font-semibold text-xl">
+                    AI Analysis
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    AI detects emotions and extracts physical symptoms.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 text-center">
+
+                <div class="text-5xl mb-5">
+                    🧘
+                </div>
+
+                <h3 class="font-semibold text-xl">
+                    Yoga Recommendation
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Suitable yoga poses are selected based on your condition.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 text-center">
+
+                <div class="text-5xl mb-5">
+                    💡
+                </div>
+
+                <h3 class="font-semibold text-xl">
+                    Explanation
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Understand why each recommendation was made.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center">
+            Core Technologies
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+
+            <div class="rounded-2xl border p-8 text-center">
+
+                <h3 class="text-xl font-semibold">
+                    Artificial Intelligence
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Emotion prediction using machine learning.
+                </p>
+
+            </div>
+
+            <div class="rounded-2xl border p-8 text-center">
+
+                <h3 class="text-xl font-semibold">
+                    NLP
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Understands emotions from journal entries.
+                </p>
+
+            </div>
+
+            <div class="rounded-2xl border p-8 text-center">
+
+                <h3 class="text-xl font-semibold">
+                    Explainable AI
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Provides transparent reasons for every recommendation.
+                </p>
+
+            </div>
+
+            <div class="rounded-2xl border p-8 text-center">
+
+                <h3 class="text-xl font-semibold">
+                    Django
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Secure backend powering the complete platform.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="py-20 bg-teal-600 text-white">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold">
+            Start Your Wellness Journey
+        </h2>
+
+        <p class="mt-6 text-xl text-teal-100">
+
+            Discover personalized yoga recommendations designed specifically
+            for your emotional well-being.
+
+        </p>
+
+        <a href="{% url 'register' %}"
+           class="inline-block mt-10 bg-white text-teal-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition">
+
+            Get Started
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

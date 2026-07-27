@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<section class="max-w-7xl mx-auto px-6 py-24">
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+
+            <h1 class="text-6xl font-bold leading-tight">
+
+                Emotion-Aware
+
+                <span class="text-teal-700">
+                    Yoga AI
+                </span>
+
+            </h1>
+
+            <p class="mt-8 text-xl text-gray-600">
+
+                Discover personalized yoga recommendations powered by
+                Artificial Intelligence, Natural Language Processing,
+                and Explainable AI.
+
+            </p>
+            <div class="flex flex-wrap gap-3 mt-8">
+
+<span class="px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-medium">
+🧠 AI Emotion Detection
+</span>
+
+<span class="px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-medium">
+💬 NLP Journal Analysis
+</span>
+
+<span class="px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-medium">
+🧘 Personalized Yoga
+</span>
+
+<span class="px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-medium">
+🤖 Explainable AI
+</span>
+
+</div>
+
+            <div class="mt-10 flex gap-4">
+
+            
+
+<a href="{% url 'register' %}"
+class="bg-teal-600 text-white px-8 py-4 rounded-xl hover:bg-teal-700 transition">
+
+Get Started
+
+</a>
+
+<a href="#features"
+class="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-xl hover:bg-teal-50 transition">
+
+Learn More
+
+</a>
+
+</div>
+
+        </div>
+
+        <div class="flex justify-center">
+
+            <img
+                src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=700"
+                class="rounded-2xl shadow-xl"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="py-20 bg-gray-50">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid md:grid-cols-4 gap-8">
+
+<div class="bg-white rounded-3xl shadow-lg p-8 text-center">
+
+<div class="text-5xl font-bold text-teal-600">
+
+7
+
+</div>
+
+<p class="mt-3 text-gray-600">
+
+Mental Health Classes
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-lg p-8 text-center">
+
+<div class="text-5xl font-bold text-teal-600">
+
+25+
+
+</div>
+
+<p class="mt-3 text-gray-600">
+
+Yoga Poses
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-lg p-8 text-center">
+
+<div class="text-5xl font-bold text-teal-600">
+
+96%
+
+</div>
+
+<p class="mt-3 text-gray-600">
+
+AI Accuracy
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-lg p-8 text-center">
+
+<div class="text-5xl font-bold text-teal-600">
+
+100%
+
+</div>
+
+<p class="mt-3 text-gray-600">
+
+Personalized Recommendations
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="features" class="bg-white py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center">
+
+            Features
+
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-10 mt-16">
+
+            <div class="shadow-lg rounded-xl p-8">
+
+                <h3 class="text-2xl font-semibold">
+                    Emotion Detection
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Detect stress, anxiety, sadness, and calmness from user journals.
+                </p>
+
+            </div>
+
+            <div class="shadow-lg rounded-xl p-8">
+
+                <h3 class="text-2xl font-semibold">
+                    Personalized Yoga
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Receive yoga recommendations tailored to your emotional state.
+                </p>
+
+            </div>
+
+            <div class="shadow-lg rounded-xl p-8">
+
+                <h3 class="text-2xl font-semibold">
+                    Explainable AI
+                </h3>
+
+                <p class="mt-4 text-gray-600">
+                    Understand why each yoga pose is recommended.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

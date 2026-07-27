@@ -1,0 +1,377 @@
+{% extends "dashboard_base.html" %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="max-w-7xl mx-auto space-y-8">
+
+    <!-- Hero -->
+
+    <div class="bg-gradient-to-r from-teal-600 to-emerald-500 rounded-3xl shadow-lg p-10 text-white">
+
+        <div class="flex flex-col md:flex-row items-center justify-between">
+
+            <div class="flex items-center gap-6">
+
+                <div class="w-24 h-24 rounded-full bg-white text-teal-700 flex items-center justify-center text-4xl font-bold shadow">
+
+                    {{ user.username|first|upper }}
+
+                </div>
+
+                <div>
+
+                    <h1 class="text-4xl font-bold">
+
+                        {{ user.username }}
+
+                    </h1>
+
+                    <p class="mt-2 text-teal-100">
+
+                        AI Wellness Member
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="mt-6 md:mt-0">
+
+                <span class="bg-white/20 px-5 py-2 rounded-full">
+
+                    Profile Settings
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Health Summary -->
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <p class="text-gray-500">
+
+                Age
+
+            </p>
+
+            <h2 class="text-3xl font-bold mt-3">
+
+                {{ form.age.value|default:"--" }}
+
+            </h2>
+
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <p class="text-gray-500">
+
+                Height
+
+            </p>
+
+            <h2 class="text-3xl font-bold mt-3">
+
+                {{ form.height.value|default:"--" }}
+
+            </h2>
+
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <p class="text-gray-500">
+
+                Weight
+
+            </p>
+
+            <h2 class="text-3xl font-bold mt-3">
+
+                {{ form.weight.value|default:"--" }}
+
+            </h2>
+
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+            <p class="text-gray-500">
+
+                BMI
+
+            </p>
+
+            {% if bmi %}
+
+<h2 class="text-3xl font-bold mt-3 text-teal-600">
+    {{ bmi }}
+</h2>
+
+<p class="text-gray-500 mt-2">
+    {{ bmi_category }}
+</p>
+
+{% else %}
+
+<h2 class="text-3xl font-bold mt-3 text-gray-400">
+    --
+</h2>
+
+<p class="text-gray-500 mt-2">
+    Enter height & weight
+</p>
+
+{% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Profile Form -->
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="bg-white rounded-3xl shadow-lg p-10">
+
+            <h2 class="text-2xl font-bold mb-8">
+
+                Personal Information
+
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Age
+
+                    </label>
+
+                    {{ form.age }}
+
+                </div>
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Gender
+
+                    </label>
+
+                    {{ form.gender }}
+
+                </div>
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Height (cm)
+
+                    </label>
+
+                    {{ form.height }}
+
+                </div>
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Weight (kg)
+
+                    </label>
+
+                    {{ form.weight }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Medical -->
+
+        <div class="bg-white rounded-3xl shadow-lg p-10 mt-8">
+
+            <h2 class="text-2xl font-bold mb-8">
+
+                Medical Information
+
+            </h2>
+
+            <div class="space-y-8">
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Medical Conditions
+
+                    </label>
+
+                    {{ form.medical_conditions }}
+
+                </div>
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Injuries
+
+                    </label>
+
+                    {{ form.injuries }}
+
+                </div>
+
+                <div class="flex items-center gap-3">
+
+                    {{ form.is_pregnant }}
+
+                    <label>
+
+                        Currently Pregnant
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Yoga Preferences -->
+
+        <div class="bg-white rounded-3xl shadow-lg p-10 mt-8">
+
+            <h2 class="text-2xl font-bold mb-8">
+
+                Yoga Preferences
+
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Experience Level
+
+                    </label>
+
+                    {{ form.yoga_level }}
+
+                </div>
+
+                <div>
+
+                    <label class="font-semibold block mb-2">
+
+                        Preferred Practice Time
+
+                    </label>
+
+                    {{ form.preferred_time }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Goals -->
+
+        <div class="bg-white rounded-3xl shadow-lg p-10 mt-8">
+
+            <h2 class="text-2xl font-bold mb-8">
+
+                Wellness Goals
+
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <label class="flex items-center gap-3 bg-teal-50 p-4 rounded-xl cursor-pointer">
+
+                    {{ form.stress_relief }}
+
+                    <span>Stress Relief</span>
+
+                </label>
+
+                <label class="flex items-center gap-3 bg-teal-50 p-4 rounded-xl cursor-pointer">
+
+                    {{ form.flexibility }}
+
+                    <span>Improve Flexibility</span>
+
+                </label>
+
+                <label class="flex items-center gap-3 bg-teal-50 p-4 rounded-xl cursor-pointer">
+
+                    {{ form.better_sleep }}
+
+                    <span>Better Sleep</span>
+
+                </label>
+
+                <label class="flex items-center gap-3 bg-teal-50 p-4 rounded-xl cursor-pointer">
+
+                    {{ form.back_pain_relief }}
+
+                    <span>Back Pain Relief</span>
+
+                </label>
+
+                <label class="flex items-center gap-3 bg-teal-50 p-4 rounded-xl cursor-pointer">
+
+                    {{ form.weight_loss }}
+
+                    <span>Weight Loss</span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- Save Button -->
+
+        <div class="flex justify-end mt-10">
+
+            <button
+                type="submit"
+                class="bg-teal-600 hover:bg-teal-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-lg transition">
+
+                Save Profile
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

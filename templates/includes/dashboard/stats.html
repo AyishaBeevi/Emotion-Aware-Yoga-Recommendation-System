@@ -1,0 +1,97 @@
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+    <!-- Journal Count -->
+
+    <div class="bg-white rounded-3xl shadow-md p-6">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+
+                <p class="text-sm text-gray-500 uppercase tracking-wide">
+
+                    Journal Entries
+
+                </p>
+
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">
+
+                    {{ journal_count }}
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    Total journals written
+
+                </p>
+
+            </div>
+
+            <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl">
+
+                📝
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Latest Recommendation -->
+
+    <div class="bg-white rounded-3xl shadow-md p-6">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+
+                <p class="text-sm text-gray-500 uppercase tracking-wide">
+
+                    Latest Recommendation
+
+                </p>
+
+                {% if pose %}
+
+                <h2 class="text-2xl font-bold text-teal-600 mt-2">
+
+                    {{ pose.name }}
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    {{ pose.duration }} min • {{ pose.difficulty }}
+
+                </p>
+
+                {% else %}
+
+                <h2 class="text-2xl font-bold text-gray-400 mt-2">
+
+                    No recommendation
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    Analyze a journal to get started.
+
+                </p>
+
+                {% endif %}
+
+            </div>
+
+            <div class="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center text-3xl">
+
+                🧘
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

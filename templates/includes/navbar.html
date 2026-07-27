@@ -1,0 +1,107 @@
+<nav class="bg-white shadow">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="flex justify-between items-center px-6 py-4">
+
+<a href="/" class="text-2xl font-bold text-teal-700">
+Yoga AI
+</a>
+
+<button id="menu-btn" class="md:hidden text-3xl">
+
+☰
+
+</button>
+
+<div class="hidden md:flex items-center space-x-8">
+
+<a href="/">Home</a>
+
+{% comment %} <a href="#">Features</a> {% endcomment %}
+
+<a href="{% url 'about' %}" class="hover:text-teal-600">
+    About
+</a>
+
+{% if user.is_authenticated %}
+
+<a href="{% url 'dashboard' %}">
+Dashboard
+</a>
+
+<a href="{% url 'logout' %}" class="text-red-600">
+Logout
+</a>
+
+{% else %}
+
+<a href="{% url 'login' %}">
+Login
+</a>
+
+<a href="{% url 'register' %}" class="bg-teal-600 text-white px-5 py-2 rounded-lg">
+Register
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<div id="mobile-menu" class="hidden md:hidden px-6 pb-5">
+
+<a href="/" class="block py-2">
+Home
+</a>
+
+<a href="#" class="block py-2">
+Features
+</a>
+
+<a href="#" class="block py-2">
+About
+</a>
+
+{% if user.is_authenticated %}
+
+<a href="{% url 'dashboard' %}" class="block py-2">
+Dashboard
+</a>
+
+<a href="{% url 'logout' %}" class="block py-2">
+Logout
+</a>
+
+{% else %}
+
+<a href="{% url 'login' %}" class="block py-2">
+Login
+</a>
+
+<a href="{% url 'register' %}" class="block py-2">
+Register
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</nav>
+
+<script>
+
+const btn=document.getElementById("menu-btn");
+
+const menu=document.getElementById("mobile-menu");
+
+btn.addEventListener("click",()=>{
+
+menu.classList.toggle("hidden");
+
+});
+
+</script>
