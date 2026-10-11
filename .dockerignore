@@ -1,0 +1,30 @@
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Local database
+db.sqlite3
+db.sqlite3-journal
+
+# Node dependencies
+node_modules/
+
+# Django generated files
+staticfiles/
+
+# Training checkpoints and outputs
+training/results/
+training/checkpoints/
+
+# Git metadata
+.git/
